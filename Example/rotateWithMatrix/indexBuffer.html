@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buffer</title>
+</head>
+<body onload="main()">
+    <canvas id="testCanvas" height="400px" width="400px"></canvas>
+    <script id = "vertexShader" type="not-javascript">
+        attribute vec4 a_Position;
+        uniform vec4 u_CosB, u_SinB;
+        void main(){
+            gl_Position.x = u_CosB.a_Position.x - a_Position.y*u_SinB;
+            gl_Position.y = a_Position.y*u_SinB + a_Position.x;
+            gl_Position.z = u_Scale.z * a_Position.z;
+            gl_Position.w = 1.0;
+            
+        }
+    </script>
+    <script id = "fragmentShader" type="not-javascript">
+        void main(){
+            gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        }
+    </script>
+    <script src="../lib/cuon-matrix.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="buffer.js"></script>
+</body>
+</html>
