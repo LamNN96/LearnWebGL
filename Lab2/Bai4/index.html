@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lab 2 - Bai 4</title>
+</head>
+
+<body onload="main()">
+    <canvas id="testCanvas" height="400px" width="400px"></canvas>
+    <script id="vertexShader" type="not-javascript">
+        attribute vec4 a_Position;
+        attribute float a_PointSize;
+            void main(){
+                gl_Position = a_Position;
+                gl_PointSize = 10.0;
+            }
+        </script>
+    <script id="fragmentShader" type="not-javascript">
+            void main(){
+                gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+            }
+        </script>
+    <script src="../../lib/cuon-matrix.js"></script>
+    <script src="../../lib/cuon-utils.js"></script>
+    <script src="../../lib/webgl-debug.js"></script>
+    <script src="../../lib/webgl-utils.js"></script>
+    <script src="webgl.js"></script>
+</body>
+
+</html>
